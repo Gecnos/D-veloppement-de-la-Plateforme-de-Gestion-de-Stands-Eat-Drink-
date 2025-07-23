@@ -21,4 +21,10 @@
 /vendor
 Homestead.json
 Homestead.yaml
+<<<<<<< HEAD
 Thumbs.db
+=======
+npm-debug.log
+Thumbs.db
+yarn-error.log
+>>>>>>> 2e53d3f (Setting up  mail sending and adding some middlewares)

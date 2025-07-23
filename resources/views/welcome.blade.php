@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.app')
 
 @section('content')
@@ -41,3 +42,23 @@
     </div>
 </section>
 @endsection
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    @if($showTime)
+    {{ time() }}
+    @endif
+
+    @foreach ($users as $user)
+        <p> {{ $user }} </p>
+    @endforeach
+</body>
+</html>
+>>>>>>> 2e53d3f (Setting up  mail sending and adding some middlewares)
