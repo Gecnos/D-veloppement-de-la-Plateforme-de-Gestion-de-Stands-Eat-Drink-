@@ -196,28 +196,3 @@
 
 
 @endsection
-
-
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <h2>Bienvenue sur votre tableau de bord, {{ Auth::user()->nom_entreprise}}</h2>
-
-    <div class="mt-4">
-        <h4> Mon Stand</h4>
-        <a href="{{ route('mon-stand')}}" class="btn btn-outline-primary">Voir / Modifier mon stand</a>
-    </div>
-
-    <div class="mt-4">
-        <h4> Mes Produits</h4>
-        <a href="{{ route('produits.index')}}" class="btn btn-outline-success">Gérer mes produits</a>
-    </div>
-
-    {{-- Bonus: commandes ou statistiques --}}
-    {{-- <div class="mt-4">
-        <h4> Mes Commandes</h4>
-        <a href="{{ route('mes-commandes')}}" class="btn btn-outline-info">Voir les commandes</a>
-    </div> --}}
-</div>
-@endsection

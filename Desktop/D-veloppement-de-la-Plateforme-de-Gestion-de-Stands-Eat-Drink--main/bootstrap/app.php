@@ -10,8 +10,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function ($middleware) {
-        //
-    })
+ })
     ->withExceptions(function ($exceptions) {
         //
     })

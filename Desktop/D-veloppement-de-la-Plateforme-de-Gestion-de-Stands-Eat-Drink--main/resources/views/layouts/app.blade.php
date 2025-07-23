@@ -1,36 +1,34 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <meta charset="UTF-8">
+    <title>Eat&Drink - @yield('title')</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
-        @include('layouts.navigation')
+<body>
+    <header>
+        <h1>Eat&Drink</h1>
+        <nav>
+            <a href="{{ route('home') }}">Accueil</a>
+            <a href="{{ route('inscription') }}">Inscription exposant</a>
+            <a href="{{ route('catalogue') }}">Catalogue</a>
+            <a href="{{ route('dashboard') }}">Mon espace</a>
+            <a href="{{ route('admin') }}">Admin</a>
+        </nav>
+    </header>
 
-        <!-- Page Heading -->
-        @hasSection('header')
-            <header class="bg-white dark:bg-gray-800 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    @yield('header')
-                </div>
-            </header>
-        @endif
+    <main>
+        @yield('content')
+    </main>
 
-        <!-- Page Content -->
-        <main>
-            @yield('content')
-        </main>
-    </div>
+    <footer>
+        <p>&copy; 2025 Eat&Drink. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    @stack('scripts')
+
 </body>
 </html>
