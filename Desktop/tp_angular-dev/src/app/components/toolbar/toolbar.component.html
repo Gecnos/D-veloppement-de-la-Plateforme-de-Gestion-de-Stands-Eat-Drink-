@@ -1,0 +1,29 @@
+import { Component, Output, EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-toolbar',
+  templateUrl: './toolbar.component.html',
+})
+export class ToolbarComponent {
+  @Output() add = new EventEmitter<void>();
+  @Output() delete = new EventEmitter<void>();
+  @Output() refresh = new EventEmitter<void>();
+
+  onAdd() {
+    this.add.emit();
+  }
+
+  onDelete() {
+    this.delete.emit();
+  }
+
+  onRefresh() {
+    this.refresh.emit();
+  }
+}
+
+<div class="toolbar">
+  <button (click)="onAddClick()">Ajouter</button>
+  <button (click)="onDeleteClick()">Supprimer</button>
+  <button (click)="onRefreshClick()">Rafraîchir</button>
+</div>

@@ -1,0 +1,13 @@
+<p>home works!</p>
+
+<app-toolbar
+  (add)="handleAdd()"
+  (delete)="handleDelete()"
+  (refresh)="handleRefresh()"
+></app-toolbar>
+
+<div class="product-list">
+  <div *ngFor="let product of featuredProducts">
+    {{ product.name }}
+  </div>
+</div>
